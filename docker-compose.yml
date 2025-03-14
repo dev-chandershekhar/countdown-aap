@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  countdown-app:
+    image: devchander1078/countdown-app:v1.0  # Or use `build: .` if you have a Dockerfile
+    build: .  # (Optional) Build from the Dockerfile if no image is available
+    ports:
+      - "3000:3000"  # Map host port to container port
+    environment:
+      - NODE_ENV=production
+    restart: always  # Ensures the container restarts if it crashes
